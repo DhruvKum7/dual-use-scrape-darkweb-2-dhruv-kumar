@@ -1,0 +1,13 @@
+
+Replace the timestamps with your actual times.
+
+### 2. Add a `.gitignore`
+
+Create `.gitignore`:
+
+```gitignore
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+venv/
