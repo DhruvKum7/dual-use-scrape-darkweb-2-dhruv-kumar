@@ -1,5 +1,10 @@
 from __future__ import annotations
 
+TARGET_SITES = [
+    "http://g7ejphhubv5idbbu3hb3wawrs5adw7tkx7yjabnf65xtzztgg4hcsqqd.onion",
+    "http://archiveiya74codqgiixo33q62qlrqtkgmcitqx5u2oeqnmn5bpcbiyd.onion"
+]
+
 from pathlib import Path
 
 from src.exporter import export_jsonl
@@ -23,6 +28,9 @@ def main() -> None:
             record = parse_html_file(html_file)
 
             if record is not None:
+                # optional: simulate mapping to target site
+                record["source_site"] = TARGET_SITES[0]
+
                 records.append(record)
 
         except (OSError, UnicodeDecodeError) as error:
